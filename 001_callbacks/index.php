@@ -29,37 +29,36 @@ $classInstance = new UserClass();
 
 // 1.1 Build-in function
 
-echo call_user_func('time') . '<br>';
+echo 'time'() . '<br>';
 
 // 1.2 User function
 
-echo call_user_func('userFunction') . '<br>';
+echo 'userFunction'() . '<br>';
 
 # 2 Object methods
 
-// 2.1 Class method (accepts array)
+// 2.1 Object method (accepts array)
 
-echo call_user_func([$classInstance, 'method']) . '<br>';
+echo [$classInstance, 'method']() . '<br>';
 
 // 2.2 Class static method (accepts string 'Class::staticMethod')
 
-echo call_user_func('UserClass::staticMethod') . '<br>';
+echo 'UserClass::staticMethod'() . '<br>';
 
 # 3 Closures
 
 // 3.1 Anonymous function
 
-echo call_user_func(function()
-{
-    echo 'Callable Anonymous Function';
-}) . '<br>';
+$f = function() {return 'Callable Anonymous Function';};
+echo $f() . '<br>';
 
 // 3.2 Arrow function
 
 $variable = 'Callable Arrow function';
 
-echo call_user_func(fn () => $variable) . '<br>';
+$f = fn () => $variable;
+echo $f() . '<br>';
 
 # 4 Objects with __invoke() method
 
-echo call_user_func($classInstance) . '<br>';
+echo $classInstance() . '<br>';
