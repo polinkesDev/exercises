@@ -2,14 +2,14 @@
 
 function userFunction(): void
 {
-    echo 'Callable userFunction()';
+    echo 'Callable userFunction';
 }
 
 class UserClass
 {
     public function __invoke(): void
     {
-        echo 'Callable __invoke() method';
+        echo 'Callable __invoke method';
     }
 
     public function method(): void
@@ -19,7 +19,7 @@ class UserClass
 
     public static function staticMethod(): void
     {
-        echo 'Callable staticMethod()';
+        echo 'Callable staticMethod';
     }
 }
 
