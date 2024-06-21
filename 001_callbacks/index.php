@@ -7,8 +7,6 @@ function userFunction(): void
 
 class UserClass
 {
-    private string $privateProperty = 'privatePropertyInitialValue';
-
     public function __invoke(): void
     {
         echo 'Callable __invoke() method';
